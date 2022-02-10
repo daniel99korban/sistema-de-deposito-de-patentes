@@ -1,0 +1,16 @@
+Assim que clonar o repositório clique ctrl + "
+e digite: npm init
+dê enter então as dependencias serão baixadas
+
+Para rodar o servidor e testar as paginas dê o seguinte comando
+node server.js
+
+Obs: todas as vezes que fizer uma alteração deve parar o servidor ctrl + c rodar denonovo com comando anterior e atualizar a pagina para então ver as alterações.
+
+Porem existe outro recurso! beeeem melhor o nodemon
+digite: npm install nodemon
+
+Agora é só dar o comando: nodemon server.js
+a partir dai o servidor fca rodando automaticamente.
+para ver alterações é só atualizar a pagina;
+para encerrar o servidor clique no terminal e dê ctrl + c
