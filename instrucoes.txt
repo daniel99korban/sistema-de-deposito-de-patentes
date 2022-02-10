@@ -1,5 +1,5 @@
 Assim que clonar o repositório clique ctrl + "
-e digite: npm init
+e digite: npm init -y
 dê enter então as dependencias serão baixadas
 
 Para rodar o servidor e testar as paginas dê o seguinte comando
