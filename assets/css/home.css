@@ -1,0 +1,35 @@
+body{
+    background-image: url("/img/home-page.jpg");
+}
+
+.chamada-para-acao{
+    width: max-content;
+    margin-right: auto;
+    margin-left: 150px;
+    margin-top: 125px;
+}
+
+.texto-chamativo{
+    width: 492px;
+    color: #1F406B;
+    font-size: larger;
+    margin-bottom: 50px;
+}
+
+.chamada-para-acao a{
+    color: #6F6DB4;
+    border: solid 5px;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bolder;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 2%;
+}
+
+.chamada-para-acao a:hover{
+    transition: 0.5s;
+    color: white;
+    background-color: #6F6DB4;
+    border-color: #6F6DB4;
+}

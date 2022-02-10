@@ -1,0 +1,48 @@
+body{
+    background-image: url("/img/login.jpg");
+}
+
+button{
+    background-color: #1f406b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 200px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: #448ceb;
+}
+
+h1{
+    color: #1f406b;
+}
+
+.formulario{
+    text-align: center;
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    background-color:rgba(196, 196, 196, 0.521);
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom:60px;
+}
+
+input{
+    width: 300px;
+    padding: 5px;
+    opacity: 1;
+    outline-color: #1f406b;
+    border: none;
+    border-radius: 10px;
+    background-color: #c4c4c4;
+    color: black;
+}

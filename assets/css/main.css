@@ -1,0 +1,46 @@
+body, html{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+nav{
+    background-color: #1F406B;
+    overflow: hidden;/*tudo que o utrapassar ele será escondido*/
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 1px 5px black;
+}
+
+nav .logo{
+    margin-top: 1%;
+    float: left;
+    padding: 0px 16px;
+}
+
+nav .menu a{
+    display: block;
+    float: right;
+    text-decoration: none;
+    color: white;
+    padding: 14px 16px;
+    margin-top: 1%;
+}
+
+nav .menu a:hover{ 
+    transition: 0.2s;
+    text-decoration: underline;
+}
+
+main{
+    height: 700px;
+    display: flex;
+}
