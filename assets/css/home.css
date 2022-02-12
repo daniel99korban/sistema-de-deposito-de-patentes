@@ -28,7 +28,7 @@ body{
 }
 
 .chamada-para-acao a:hover{
-    transition: 0.5s;
+    transition: 0.2s;
     color: white;
     background-color: #6F6DB4;
     border-color: #6F6DB4;

@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="/css/deposito-de-patentes.css">
+<nav>
+    <div class="logo">
+        <a href="/">
+            <img src="/img/logo.png" alt="logo patentizer" height="65px">
+        </a>
+    </div>
+    <div class="menu">
+        <a class="usuario"><div class="usuario"></div></a>
+        <a class="sobre" href="#">Sobre</a>
+        <a class="home" href="/">Home</a>
+    </div>
+</nav>
+<main>
+    <div class="container">
+        <!--Pesquisa da patente-->
+        <div class="consulta-patente">
+            <h1>Consulte sua patente</h1>
+            <hr id="linha1">
+            <div class="pesquisa-nome">
+                <input type="text" placeholder="Nome da marca"><img src="/img/search.png" alt="search" id="pesq-nome">
+                <p>Aqui estão as patentes pertencentes à<br>marca escolhida</p>
+            </div>
+            <div class="pesquisa-categoria">
+                <input style="cursor: pointer;" list="browsers" placeholder="Categoria"/><img src="/img/search.png" alt="search" id="pesq-categoria">
+                <datalist id="browsers">
+                 <option value="Patente de criação">
+                 <option value="Modelo de utilização">
+                 <option value="Desenho Industrial">
+                </datalist>
+                <p>Aqui estão as patentes pertencentes à<br>categoria escolhida</p>
+            </div>
+            <p id="paragrafo1"><a href="#">Veja os modelos de como os documentos devem ser enviados para pedidos de patentes de invenção e os seus documentos de requisitos por tipo de invenção</a></p>
+            <br>
+            <br>
+            <p id="paragrafo2"><a href="#">Veja os modelos de como os documentos devem ser enviados para pedidos de patentes de utilidade e os seus documentos de requisitos por tipo de utilidade</a></p>
+        </div>
+        <!--Depositar patentes-->
+        <div class="depositar-patentes">
+            <div class="formulario">
+                <h1>Depositar-patentes</h1>
+                <form>
+                    <input required="" type="text" placeholder="Nome completo" name="nome" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="Tipo Pesquisa" name="pesquisa" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="Nome patente" name="nomePat" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="Tipo patente" name="tipPat" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="Instituição" name="instituicao" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="Ocupação" name="ocupacao" autocomplete="off"><br><br>
+                    <input required="" type="text" placeholder="CPF/CNPJ" name="cpfcnpj" autocomplete="off"><br><br>
+                    <input required="" type="email" placeholder="E-mail" name="email"><br><br>
+                    <p>Envie um documento descritivo da patente</p>
+                    <input type="file" id="avatar" name="avatar" accept=".doc,.docx,.pdf" placeholder="Escolher arquivos">
+                    <br>
+                    <button type="submit">Enviar patente</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>
