@@ -3,7 +3,7 @@ const app = express();
 const path = require("path");
 const handlebars = require("express-handlebars");
 const database = require("./models/db");
-const { redirect } = require("express/lib/response");
+// const { redirect } = require("express/lib/response");
 
 // Config
 // inportar arquivos estaticos
@@ -44,7 +44,7 @@ app.set('view engine', 'handlebars');
         res.render("dash-board-nit");
     })
 
-const PORT = process.env.PORT || 5000    
+const PORT = process.env.PORT || 3000    
 app.listen(PORT, ()=>{
     console.log("Servidor rodando na port: " + PORT);
 });

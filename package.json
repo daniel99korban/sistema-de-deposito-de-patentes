@@ -5,5 +5,31 @@
     "handlebars": "^4.7.7",
     "mysql2": "^2.3.3",
     "sequelize": "^6.16.1"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "sistema-de-cadastro-de-patentes",
+  "description": "Aplicação web com nodeJs para automatizar e gerenciar o processo de deposito de patentes.\r  ## Resumo\r  Este projeto é voltado a construção de uma aplicação web utilizando o nodeJs para o Back-end.\r  optou-se utilizar a tecnologia por esta ser de rápida implementação no desenvolvimento visto que,\r  alguns de seus conceitos podem ser aproveitados em uma das três tecnologias de front-end.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel99korban/sistema-de-cadastro-de-patentes.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "javascript",
+    "fullstack",
+    "mysql",
+    "deploy"
+  ],
+  "author": "Daniel Kim Cristovão",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel99korban/sistema-de-cadastro-de-patentes/issues"
+  },
+  "homepage": "https://github.com/daniel99korban/sistema-de-cadastro-de-patentes#readme"
 }
