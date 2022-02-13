@@ -1,10 +1,13 @@
 .container{
-    width: 800px;
+    width: 100%;
+    max-width: 1700px;
+    height: max-content;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-    margin-top: 110px;
-    border: solid 2px red;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    flex-wrap: wrap;
 }
 
 /*Consultar patentes*/
@@ -17,7 +20,6 @@
 
 .consulta-patente{
     text-align: center;
-    border: solid;
     width: 390px;
     margin-left: auto;
     margin-right: auto;
@@ -31,12 +33,12 @@
     margin-bottom: 3%;
 }
 
-#pesq-nome, #pesq-categoria{
+#pesq-nome, #pesq-categoria{/*icones seach*/
     width: 30px;
     padding-left: 20px;
     position: absolute;
     margin-top: 16px;
-
+    z-index: 0;
 }
 
 .pesquisa-categoria input, .pesquisa-nome input{
@@ -56,12 +58,26 @@
 
 /*================================*/
 .depositar-patentes{
-    border: solid black;
+    width: 50%;
+    max-width: 1500px;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 4%;
+    background-color: white;
+    border: solid 1px gray;
+    border-radius: 10px;
+    flex-wrap: wrap;
 }
 
 /*Depositar patentes*/
 .formulario{
+    margin-top: 40px;
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .formulario h1{
@@ -86,11 +102,27 @@ button{
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    width: 200px;
-    margin-top: 30px;
+    width: 170px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
 button:hover{
     background-color: #448ceb;
+}
+
+/*Informações*/
+.informacoes p{
+    color: #1f406b;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 30px;
+}
+
+.informacoes{
+    height: 550px;
+    border-left: solid 2px gray;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }

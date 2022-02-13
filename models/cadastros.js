@@ -1,8 +1,10 @@
 const Sequelize = require("sequelize");
 const database = require("./db");
+const Login = require("./login-usuario");
+const DepPatente = require("./depositopatentes");
 
 const Cadastro =  database.define('cadastro', {
-    codPesquisador:{
+    iduser:{
         type: Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
@@ -27,14 +29,16 @@ const Cadastro =  database.define('cadastro', {
     },
     ocupacao:{
         type: Sequelize.STRING(40)
-    },
-    email:{
-        type: Sequelize.STRING(30),
-        allowNull: false
-    },
-    senha:{
-        type: Sequelize.STRING(10),
-        allowNull: false
     }
 })
+
+Cadastro.belongsTo(Login, {
+    constraint: true,
+    foreignKy: 'idlogin'
+});
+Cadastro.belongsTo(DepPatente, {
+    constraint: true,
+    foreignKy: 'numpatente'
+});
+
 module.exports = Cadastro; 

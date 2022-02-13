@@ -13,8 +13,7 @@ app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 // Rotas
     app.get('/', function(req, res){// Rota principal
-        // res.render("home");
-        res.render("deposito-de-patentes");// teste
+        res.render("home");
     });
 
     app.get('/login', function(req, res){
@@ -24,11 +23,25 @@ app.set('view engine', 'handlebars');
     app.get('/cadastro', function(req, res){
         res.render("cadastro");
     });
-    
+
+    app.get('/deposito-de-patentes', function(req, res){
+        res.render("deposito-de-patentes");
+    });
+    // metodos posts
     app.post('/cad', (req, res)=>{// cadastro de usuario
         const Cadastro = require("./models/cadastros");
         database.sync();
         res.redirect('/');
+    })
+    app.post('/dep-patente', (req, res)=>{
+        //const Cadastro = require("./models/cadastros");
+        //database.sync();
+        res.redirect('/');
+    })
+    app.post('/dash-board-nit', (req, res)=>{
+        //const Cadastro = require("./models/cadastros");
+        //database.sync();
+        res.render("dash-board-nit");
     })
 
 const PORT = process.env.PORT || 5000    

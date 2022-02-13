@@ -1,0 +1,71 @@
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+table, tr, th, td{
+    border: solid 1px;
+    border-collapse: collapse;
+    background-color: #C4C4C4;
+}
+th{
+    background-color: #4D74C0;
+    color: white;
+}
+
+td{
+    height: 80px;
+}
+
+table{
+    text-align: center;
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 160px;
+}
+
+.sinalizar{
+    width: 30px;
+    height: 23px;
+    background-color: #22B20A;
+    border-radius: 5px;
+}
+
+.caixa{/*Das tabelas*/
+    float: right;
+    margin-right: 30px;
+}
+/*===========*/
+.guia-info-prazos{
+    overflow: hidden;/*tudo que o utrapassar ele será escondido*/
+    position: fixed;
+    margin-left: 55px;
+    margin-top: 500px;
+    height: 100px;
+    width: 200px;
+    background-color: rgba(220, 219, 235, 0.521);
+    border-radius: 10px;
+}
+#ok{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#encerrando{
+    margin-left: 10px;
+    margin-top: 10px;
+    background-color: red;
+}
+.prazo-ok{
+    display: flex;
+    flex-direction: row;
+    
+}
+.prazo-ok p, .prazo-encerrando p{
+    margin-left: 20px;
+    font-weight: bolder;   
+}
+.prazo-encerrando{
+    display: flex;
+    flex-direction: row;
+}
