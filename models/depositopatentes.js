@@ -1,4 +1,4 @@
-const db = require("./db");
+/*const db = require("./db");
 
 const DepositoPatente = db.sequelize.define('depositopatentes', {
     numpatente:{
@@ -28,4 +28,4 @@ const DepositoPatente = db.sequelize.define('depositopatentes', {
     }
 });
 DepositoPatente.sync({force: true});
-module.exports = DepositoPatente;
+module.exports = DepositoPatente;*/

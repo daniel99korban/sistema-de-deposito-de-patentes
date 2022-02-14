@@ -1,4 +1,4 @@
-const db = require("./db");
+/*const db = require("./db");
 const Login = require("./login-usuario");
 const DepPatente = require("./depositopatentes");
 
@@ -44,4 +44,4 @@ Cadastro.belongsTo(DepPatente, {
 });
 
 Cadastro.sync({force: true}); // com este comando recria-se a tabela novamente
-module.exports = Cadastro;
+module.exports = Cadastro;*/

@@ -1,4 +1,4 @@
-//site da modelagem do banco: https://app.brmodeloweb.com/
+/*//site da modelagem do banco: https://app.brmodeloweb.com/
 const Sequelize = require("sequelize");    
 // Conexão com banco de dados MySql
 const sequelize = new Sequelize('ddpl9r657m9acs', 'eoleblwcvpmczt', '2ac1ad064327e3d09986bcb6331e118c93e6ffbf292df61c0ae43f5f9bc7614e', {// bd, user, passwrd
@@ -10,7 +10,7 @@ const sequelize = new Sequelize('ddpl9r657m9acs', 'eoleblwcvpmczt', '2ac1ad06432
     dialect: 'mysql'
 });*/
 // exportar modulo
-module.exports = {
+/*module.exports = {
     Sequelize: Sequelize,
     sequelize: sequelize
-}
+}*/

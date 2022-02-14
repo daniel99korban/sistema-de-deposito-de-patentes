@@ -1,4 +1,4 @@
-const db = require("./db");
+/*const db = require("./db");
 
 const LoginUsuario =  db.sequelize.define('loginusuario', {
     idlogin:{
@@ -22,4 +22,4 @@ const LoginUsuario =  db.sequelize.define('loginusuario', {
     }
 });
 LoginUsuario.sync({force: true});
-module.exports = LoginUsuario;
+module.exports = LoginUsuario;*/

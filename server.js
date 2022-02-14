@@ -5,8 +5,8 @@ const handlebars = require("express-handlebars");
 const database = require("./models/db");
 
 // exportar models de tabelas
-const Cadastro = require("./models/cadastros");
-const Login = require("./models/login-usuario");
+// const Cadastro = require("./models/cadastros");
+// const Login = require("./models/login-usuario");
 // const { redirect } = require("express/lib/response");
 
 // Config
@@ -16,8 +16,8 @@ app.use(express.static(path.join(__dirname, "assets")));
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 // Receber dados com o express
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
+//app.use(express.urlencoded({extended: false}));
+//app.use(express.json());
 // Rotas
     app.get('/', function(req, res){// Rota principal
         res.render("home");
@@ -36,7 +36,7 @@ app.use(express.json());
     });
     // metodos posts
     app.post('/cad', (req, res)=>{// cadastro de usuario
-        const novoLogin = Login.create({
+        /*const novoLogin = Login.create({
             email: req.body.Email,
             senha: req.body.senha
         }).then(()=>{
@@ -59,31 +59,6 @@ app.use(express.json());
             res.redirect('/login');
         }).catch(()=>{
             res.send("Erro ao gravar dados :(");
-        })
-
-
-
-
-
-
-
-
-        // const Login = require("./models/login-usuario");
-        //database.sync();
-
-        /*const novoCadastro = Cadastro.create({// inserindo na tabela
-            endereco: req.body.endereco,
-            contato: req.body.contato,
-            cpfcnpj: req.body.cpfcnpj,
-            instituicao: req.body.instituicao,
-            ocupacao: req.body.ocupacao,
-            // idlogin: novoLogin.idlogin
-
-        }).then(()=>{
-            //res.send('Musico registrado com sucesso ;)');
-            res.redirect('/login');
-        }).catch(()=>{
-            res.send("Erro tente novamente :(");
         })*/
     })
     /*app.post('/dep-patente', (req, res)=>{
