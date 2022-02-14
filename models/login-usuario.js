@@ -1,25 +1,25 @@
-const Sequelize = require("sequelize");
-const database = require("./db");
+const db = require("./db");
 
-const LoginUsuario =  database.define('loginusuario', {
+const LoginUsuario =  db.sequelize.define('loginusuario', {
     idlogin:{
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
     email:{
-        type: Sequelize.STRING(30),
+        type: db.Sequelize.STRING(30),
         allowNull: false
     },
     senha:{
-        type: Sequelize.STRING(10),
+        type: db.Sequelize.STRING(10),
         allowNull: false
     },
     logado:{
-        type: Sequelize.BOOLEAN,
-        defaultValue: true,   
+        type: db.Sequelize.BOOLEAN,
+        defaultValue: false,   
         allowNull: false
     }
 });
+LoginUsuario.sync({force: true});
 module.exports = LoginUsuario;

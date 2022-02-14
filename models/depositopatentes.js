@@ -1,32 +1,31 @@
-const Sequelize = require("sequelize");
-const database = require("./db");
+const db = require("./db");
 
-const DepositoPatente =  database.define('depositopatentes', {
+const DepositoPatente = db.sequelize.define('depositopatentes', {
     numpatente:{
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
     nompatente:{
-        type: Sequelize.STRING(30),
+        type: db.Sequelize.STRING(30),
         allowNull: false
     },
     tipopatente:{
-        type: Sequelize.ENUM("Patente de criação", "Modelo de utilização", "Desenho Industrial"),
-        defaultValue: "Patente de criação",
-        allowNull = false
+        type: db.Sequelize.ENUM("Patente de criação", "Modelo de utilização", "Desenho Industrial"),
+        defaultValue: "Patente de criação"
     },
     tipopesquisa:{
-        type: Sequelize.STRING(30),
+        type: db.Sequelize.STRING(30),
         allowNull: false
     },
     emailpatente:{
-        type: Sequelize.STRING(40),
+        type: db.Sequelize.STRING(40),
         allowNull: false
     },
     docPatente:{
-        type: Sequelize.BLOB('long')
+        type: db.Sequelize.BLOB('long')
     }
 });
-
+DepositoPatente.sync({force: true});
 module.exports = DepositoPatente;

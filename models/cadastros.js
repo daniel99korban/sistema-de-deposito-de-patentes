@@ -1,44 +1,47 @@
-const Sequelize = require("sequelize");
-const database = require("./db");
+const db = require("./db");
 const Login = require("./login-usuario");
 const DepPatente = require("./depositopatentes");
 
-const Cadastro =  database.define('cadastro', {
+const Cadastro =  db.sequelize.define('cadastro', {
     iduser:{
-        type: Sequelize.INTEGER,
+        type: db.Sequelize.INTEGER,
         autoIncrement: true,
         allowNull: false,
         primaryKey: true
     },
     nome:{
-        type: Sequelize.STRING(30),
+        type: db.Sequelize.STRING(30),
         allowNull: false
     },
     endereco:{
-        type: Sequelize.TEXT
+        type: db.Sequelize.STRING(30),
+        allowNull: false
     },
     contato:{
-        type: Sequelize.STRING(15)
+        type: db.Sequelize.STRING(30),
+        allowNull: false
     },
     cpfcnpj:{
-        type: Sequelize.STRING(30),
+        type: db.Sequelize.STRING(30),
         allowNull: false
     },
     instituicao:{
-        type: Sequelize.STRING(40)
+        type: db.Sequelize.STRING(40)
     },
     ocupacao:{
-        type: Sequelize.STRING(40)
+        type: db.Sequelize.STRING(40)
     }
-})
+});
 
 Cadastro.belongsTo(Login, {
     constraint: true,
     foreignKy: 'idlogin'
 });
+
 Cadastro.belongsTo(DepPatente, {
     constraint: true,
     foreignKy: 'numpatente'
 });
 
-module.exports = Cadastro; 
+Cadastro.sync({force: true}); // com este comando recria-se a tabela novamente
+module.exports = Cadastro;
