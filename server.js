@@ -2,22 +2,28 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const handlebars = require("express-handlebars");
-const database = require("./models/db");
-
 // exportar models de tabelas
-// const Cadastro = require("./models/cadastros");
-// const Login = require("./models/login-usuario");
-// const { redirect } = require("express/lib/response");
+const { sequelize } = require('./models');
+const console = require("console");
+
+
+sequelize.sync().then(()=>{
+    console.log("conexão com banco de dados realizada com sucesso :)");
+}).catch(()=>{
+    console.log("ERRO DE CONEXÃO COM O BANCO DE DADOS :(");
+})
+
+
 
 // Config
 // inportar arquivos estaticos
-app.use(express.static(path.join(__dirname, "assets")));
+/*app.use(express.static(path.join(__dirname, "assets")));
 // Templete engine com isto nos agora não precisamos rescrever as estruturas básicas do html
 app.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 // Receber dados com o express
-//app.use(express.urlencoded({extended: false}));
-//app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(express.json());
 // Rotas
     app.get('/', function(req, res){// Rota principal
         res.render("home");
@@ -36,7 +42,7 @@ app.set('view engine', 'handlebars');
     });
     // metodos posts
     app.post('/cad', (req, res)=>{// cadastro de usuario
-        /*const novoLogin = Login.create({
+        const novoLogin = Login.create({
             email: req.body.Email,
             senha: req.body.senha
         }).then(()=>{
@@ -59,7 +65,7 @@ app.set('view engine', 'handlebars');
             res.redirect('/login');
         }).catch(()=>{
             res.send("Erro ao gravar dados :(");
-        })*/
+        })
     })
     /*app.post('/dep-patente', (req, res)=>{
         //const Cadastro = require("./models/cadastros");
