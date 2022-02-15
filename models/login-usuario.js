@@ -1,4 +1,4 @@
-const loginUsuario = (sequelize, DataTypes) =>{
+/*const loginUsuario = (sequelize, DataTypes) =>{
     const LoginUsuario = sequelize.define('LoginUsuario', {
         idlogin:{
             type: DataTypes.INTEGER,
@@ -22,5 +22,5 @@ const loginUsuario = (sequelize, DataTypes) =>{
     })
     return LoginUsuario;
 }
-module.exports = loginUsuario;
+module.exports = loginUsuario;*/
 // LoginUsuario.sync({force: true});// forca a recriação de tabelas
