@@ -40,9 +40,9 @@ const console = require("console");
         res.render("deposito-de-patentes");
     });
     // metodos posts
-    app.post('/cad', async (req, res)=>{// cadastro de usuario
-        const novoCadastro = req.body;
-        await db.cadastro.create(novoCadastro);
+    app.post('/cad', /*async*/ (req, res)=>{// cadastro de usuario
+        // const novoCadastro = req.body;
+        // await db.cadastro.create(novoCadastro);
         res.redirect('/login');
         /*const novoCadastro = Cadastro.create({// inserindo na tabela
             nome: req.body.nome,
