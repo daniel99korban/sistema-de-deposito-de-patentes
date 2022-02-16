@@ -42,7 +42,7 @@ const pool = new Pool({
         const {nome, endereco, contato, cpfcnpj, instituicao, ocupacao, email, senha} = req.body
         // const {rows} = await pool.query("SELECT encode(digest($1, 'sha1'), 'hex')", [senha]);
         try {
-        const novoCadastro = await pool.query('INSERT INTO cadastro(nome,endereco,contato,cpfcnpj,instituicao,ocupacao,email,senha)VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *', [nome, endereco, contato, cpfcnpj,instituicao, ocupacao, email, senha]);//[rows[0].encode].toString()
+        const novoCadastro = await pool.query('INSERT INTO cadastro(nome,endereco,contato,cpfcnpj,instituicao,ocupacao,email,senha)VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *', [nome, endereco, contato, cpfcnpj,instituicao, ocupacao, email, [rows[0].encode].toString()]);//[rows[0].encode].toString()
             return res.status(200).redirect('/login');
             // return res.status(200).send(novoCadastro.rows);
             //res.render('/login');
