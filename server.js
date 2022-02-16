@@ -7,7 +7,8 @@ const { Pool } = require('pg');
 require('dotenv').config();
 // CONECTANDO AO BANCO DE DADOS
 const pool = new Pool({
-    connectionString: process.env.POSTGRES_URL
+    // connectionString: process.env.POSTGRES_URL
+    connectionString: process.env.DATABASE_URL
 })
 
 // Config
