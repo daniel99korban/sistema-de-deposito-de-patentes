@@ -2,17 +2,12 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const handlebars = require("express-handlebars");
-// exportar models de tabelas
-const { sequelize } = require('./models');
-const db = require('./models/index');
-
-const console = require("console");
-
- sequelize.sync().then(()=>{// feedback sobre conexões
-     console.log("conexão com banco de dados realizada com sucesso :)");
- }).catch(()=>{
-     console.log("ERRO DE CONEXÃO COM O BANCO DE DADOS :(");
- })
+const { Pool } = require('pg');
+require('dotenv').config();
+// CONECTANDO AO BANCO DE DADOS
+const pool = new Pool({
+    connectionString: process.env.POSTGRES_URL
+})
 
 // Config
     // inportar arquivos estaticos
@@ -40,7 +35,18 @@ const console = require("console");
         res.render("deposito-de-patentes");
     });
     // metodos posts
-    app.post('/cad', /*async*/ (req, res)=>{// cadastro de usuario
+    app.post('/cad', async(req, res)=>{// cadastro de usuario
+        const {nome, endereco, contato, cpfcnpj, instituicao, ocupacao, email, senha} = req.body
+        const {rows} = await pool.query("SELECT encode(digest($1, 'sha1'), 'hex')", [senha]);
+        try {
+            const novoCadastro = await pool.query('INSERT INTO cadastro(nome,endereco,contato,cpfcnpj,instituicao,ocupacao,email,senha)VALUES($1,$2,$3,$4,$5,$6,$7, $8) RETURNING *', [nome, endereco, contato, cpfcnpj,instituicao, ocupacao, email, [rows[0].encode].toString()]);
+            return res.status(200).redirect('/login');
+        } catch (error) {
+            return res.status(400).send(error);
+        }
+    });
+
+    /*app.post('/cad', async (req, res)=>{// cadastro de usuario
         // const novoCadastro = req.body;
         // await db.cadastro.create(novoCadastro);
         res.redirect('/login');
@@ -59,8 +65,6 @@ const console = require("console");
         }).catch(()=>{
             res.send("Erro ao gravar dados :(");
         })*/
-    })
-    // idlogin: novoLogin.idlogin
     /*app.post('/dep-patente', (req, res)=>{
         //const Cadastro = require("./models/cadastros");
         //database.sync();
@@ -72,7 +76,7 @@ const console = require("console");
         res.render("dash-board-nit");
     })*/
 
-const PORT = process.env.PORT || 3000    
+const PORT = process.env.PORT || 8080    
 app.listen(PORT, ()=>{
     console.log("Servidor rodando na port: " + PORT);
 });

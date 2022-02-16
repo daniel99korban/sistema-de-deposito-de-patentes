@@ -1,2 +1,6 @@
 node_modules/
+models/
+.env
 anotacoes.txt
+comandos.sql
+instrucoes.txt
