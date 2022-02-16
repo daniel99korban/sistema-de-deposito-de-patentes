@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require('cors');
+
 const app = express();
 const path = require("path");
 const handlebars = require("express-handlebars");
@@ -19,7 +19,6 @@ const pool = new Pool({
     // Receber dados com o express
     app.use(express.urlencoded({extended: false}));
     app.use(express.json());
-    app.use(cors());
     // Rotas
     app.get('/', function(req, res){// Rota principal
         res.render("home");
@@ -41,8 +40,8 @@ const pool = new Pool({
         const {nome, endereco, contato, cpfcnpj, instituicao, ocupacao, email, senha} = req.body
         // const {rows} = await pool.query("SELECT encode(digest($1, 'sha1'), 'hex')", [senha]);
         try {
-/*const novoCadastro =*/ await pool.query('INSERT INTO cadastro(nome,endereco,contato,cpfcnpj,instituicao,ocupacao,email,senha)VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *', [nome, endereco, contato, cpfcnpj,instituicao, ocupacao, email, senha]);//[rows[0].encode].toString()
-            return res.status(200).redirect('/login');
+        const novoCadastro = await pool.query('INSERT INTO cadastro(nome,endereco,contato,cpfcnpj,instituicao,ocupacao,email,senha)VALUES($1,$2,$3,$4,$5,$6,$7,$8) RETURNING *', [nome, endereco, contato, cpfcnpj,instituicao, ocupacao, email, senha]);//[rows[0].encode].toString()
+            return res.status(200).send(novoCadastro.rows);
             //res.render('/login');
         } catch (error) {
             return res.status(400).send(error);
