@@ -44,8 +44,12 @@ const pool = new Pool({
         res.render('dash-board-usuario');
     });
 
-    app.post('/dash-board-nit', (req, res)=>{
+    app.get('/dash-board-nit', (req, res)=>{
         res.render("dash-board-nit");
+    })
+
+    app.get('/dash-borad-nit', (req, res)=>{
+        res.render("dash-borad-nit");
     })
 // metodos posts
     app.post('/cad', async(req, res)=>{// cadastro de usuario
@@ -63,11 +67,11 @@ const pool = new Pool({
     app.post('/autenticar', async (req, res)=>{// logar autenticar usuario
         const {usuario, senha} = req.body;
         // senhas privilegiadas
-        if(senha == '123nit'){
+        if(senha == '123nit' && usuario == 'admin'){
             return res.render('dash-board-nit');
         }
-        if(senha='123admin'){
-            return res.render('dash-board-admin');
+        if(senha=='123admin' && usuario == 'admin'){
+            return res.render('dash-borad-admin');
         }
         try {
             const Usuario = await pool.query('SELECT * FROM cadastro WHERE email=$1 AND senha=$2', [usuario, senha])

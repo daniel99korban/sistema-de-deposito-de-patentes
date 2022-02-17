@@ -1,0 +1,86 @@
+
+            
+            body, html{
+                margin:0;
+                padding: 0;
+                height: 100%;
+            }
+    
+           
+            main{
+                height: 700px;
+                display: flex;
+            }
+    
+            .seletortela{
+                margin-top: 264px;
+                margin-left: 386px;
+                border-color: rgb(85, 79, 79);
+                border-radius: 10px;
+                border-width: 6px;
+                height: 130px;
+                text-align: left;
+                padding-right: 12px;
+                background-color: rgb(172, 172, 172);
+            }
+    
+            .abas{
+                margin-top: 153px;
+                margin-left: 85px;
+                width: 388px;
+    
+            }
+    
+            .abas > a{
+                border-color: black;
+                border-top-left-radius: 27px;
+                border-top-right-radius: 27px;
+                padding: 10px;
+                color: azure;
+                text-decoration: none;
+                background-color: #4D74C0;
+            }
+    
+            .telaconsole{
+                background-color: #C4C4C4;
+                height: 516px;
+                width: 520px;
+                margin-top: 10px;
+                
+    
+            }
+    
+            .admins{
+                margin-top: 254px;
+                margin-left: 205px;
+                
+               
+            }
+    
+            .nome{
+                background-color: #4D74C0;
+                border-color: black;
+                border-top-left-radius: 12px;
+                border-top-right-radius: 12px;
+                padding: 10px;
+                color: azure;
+            }
+    
+            .nomesdmins{
+                width: 236px;
+                height: 136px;
+                background-color: #C4C4C4;
+                border-bottom-left-radius: 10px;
+                border-bottom-right-radius: 10px;
+            }
+    
+            .circulo2{
+                padding: 3px 10px;
+                display: inline;
+                background-color: #4D74C0;;
+                border-radius: 50%;
+                border-width: -2px;
+                border-color: grey;
+                margin-left: 37px;
+                
+            }
