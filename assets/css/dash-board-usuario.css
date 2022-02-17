@@ -1,0 +1,64 @@
+body{
+    background-image: url("assets/img/tela-de-admin-logado.jpg");
+}
+.dash_user_docs{
+    background-color: #c4c4c4;
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0.7;
+    top: 30%;
+    left: 6%;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    font-weight: bold;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: none;
+    padding-top: 5px;
+}
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+    padding-bottom: 5px;
+    padding-left: 30px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+table, tr, th, td{
+    border: solid 1px;
+    border-collapse: collapse;
+    background-color: #C4C4C4;
+    font-family: Arial, Helvetica, sans-serif;
+}
+th{
+    background-color: #4D74C0;
+    color: white;
+    height: 60px;
+}
+td{
+    height: 80px;
+}
+table{
+    text-align: center;
+    width: 600px;
+    margin-top: 210px;
+    margin-left: 800px;
+    opacity: 0.8;
+}
+ul{
+    line-height: 1.4;
+    text-align: left;
+}
+.timeline{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-color: green;
+    float: left;
+    margin-top: 5px;
+}
+div{
+    margin-right: 4px;
+}

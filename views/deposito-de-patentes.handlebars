@@ -6,7 +6,7 @@
         </a>
     </div>
     <div class="menu">
-        <a class="usuario"><div class="usuario"></div></a>
+        <a class="usuario"><div class="usuario" style="visibility: hidden;">{{dados.nome}}</div></a>
         <a class="sobre" href="#">Sobre</a>
         <a class="home" href="/">Home</a>
     </div>
@@ -39,15 +39,15 @@
         <div class="depositar-patentes">
             <div class="formulario">
                 <h1>Depositar-patentes</h1>
-                <form>
-                    <input required="" type="text" placeholder="Nome completo" name="nome" autocomplete="off"><br><br>
+                <form action="/depositar-patente" method="POST">
+                    <input id="nome" required="" type="text" placeholder="Nome completo" name="nome" autocomplete="off"><br><br>
                     <input required="" type="text" placeholder="Tipo Pesquisa" name="pesquisa" autocomplete="off"><br><br>
                     <input required="" type="text" placeholder="Nome patente" name="nomePat" autocomplete="off"><br><br>
                     <input required="" type="text" placeholder="Tipo patente" name="tipPat" autocomplete="off"><br><br>
-                    <input required="" type="text" placeholder="Instituição" name="instituicao" autocomplete="off"><br><br>
-                    <input required="" type="text" placeholder="Ocupação" name="ocupacao" autocomplete="off"><br><br>
-                    <input required="" type="text" placeholder="CPF/CNPJ" name="cpfcnpj" autocomplete="off"><br><br>
-                    <input required="" type="email" placeholder="E-mail" name="email"><br>
+                    <input id="instituicao" required="" type="text" placeholder="Instituição" name="instituicao" autocomplete="off"><br><br>
+                    <input id="ocupacao" required="" type="text" placeholder="Ocupação" name="ocupacao" autocomplete="off"><br><br>
+                    <input id="cpfcnpj" required="" type="text" placeholder="CPF/CNPJ" name="cpfcnpj" autocomplete="off"><br><br>
+                    <input id="email" required="" type="email" placeholder="E-mail" name="email"><br>
                     <p>Envie um documento descritivo da patente</p>
                     <input type="file" id="avatar" name="avatar" accept=".doc,.docx,.pdf" placeholder="Escolher arquivos">
                     <br>
@@ -63,5 +63,12 @@
             </div>
         </div>
     </div>
-
+    <script src="/js/deposito-de-patentes.js"></script>
+    <script>
+        document.getElementById("nome").setAttribute('value','{{dados.nome}}');
+        document.getElementById("ocupacao").setAttribute('value','{{dados.ocupacao}}');
+        document.getElementById("instituicao").setAttribute('value','{{dados.instituicao}}');
+        document.getElementById("cpfcnpj").setAttribute('value','{{dados.cpfcnpj}}');
+        document.getElementById("email").setAttribute('value','{{dados.email}}');
+    </script>
 </main>

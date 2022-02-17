@@ -126,3 +126,14 @@ button:hover{
     margin-left: auto;
     margin-right: auto;
 }
+
+/* configurações para dados dinamicos*/
+
+.perfilUsuario{
+    height: max-content;
+    width: max-content;
+    color: #fa8f02;
+    border-radius: 50%;
+    font-weight: bolder;
+    background-color: white;
+}
