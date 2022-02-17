@@ -62,6 +62,13 @@ const pool = new Pool({
     
     app.post('/autenticar', async (req, res)=>{// logar autenticar usuario
         const {usuario, senha} = req.body;
+        // senhas privilegiadas
+        if(senha == '123nit'){
+            return res.render('dash-board-nit');
+        }
+        if(senha='123admin'){
+            return res.render('dash-board-admin');
+        }
         try {
             const Usuario = await pool.query('SELECT * FROM cadastro WHERE email=$1 AND senha=$2', [usuario, senha])
             // enviar dados para o front
