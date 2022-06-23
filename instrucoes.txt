@@ -1,13 +1,14 @@
-Assim que clonar o repositório clique ctrl + "
+Assim que clonar o repositório abra o terminal do vs code
 e digite: npm init -y
 dê enter então as dependencias serão baixadas
 
 Para rodar o servidor e testar as paginas dê o seguinte comando
 node server.js
+va para seu navegador e digite localhost:8080
 
 Obs: todas as vezes que fizer uma alteração deve parar o servidor ctrl + c rodar denonovo com comando anterior e atualizar a pagina para então ver as alterações.
 
-Porem existe outro recurso! beeeem melhor o nodemon
+Porem existe outro recurso! beeeem melhor, o nodemon!
 digite: npm install nodemon
 
 Agora é só dar o comando: nodemon server.js
